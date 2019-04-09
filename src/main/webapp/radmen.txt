@@ -1,0 +1,4 @@
+后台管理页面
+http://localhost:8080/mall_88_manage_teacher/manage/main.do
+http://localhost:8080/mall_88_manage_teacher/spu/spuadd3.do
+http://localhost:8080/mall_88_manage_teacher/attr/attr_add

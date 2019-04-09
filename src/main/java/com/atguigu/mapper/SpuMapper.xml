@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.atguigu.mapper.SpuMapper">
+	<!-- useGeneratedKeys="true" keyColumn="id" keyProperty="id"：主键返回 -->
+	<insert useGeneratedKeys="true" keyColumn="id" keyProperty="id" 
+		id="inser_spu" parameterType="com.atguigu.bean.T_MALL_SKU">
+	insert into t_mall_product(
+		shp_mch,
+		shp_tp,
+		flbh1,
+		flbh2,
+		pp_id,
+		chjshj,
+		shp_msh
+		)
+		values
+		(
+		#{shp_mch},
+		#{shp_tp},
+		#{flbh1},
+		#{flbh2},
+		#{pp_id},
+		#{chjshj},
+		#{shp_msh}
+		)
+	</insert>
+	
+	<!-- 添加商品图片 -->
+	<insert id="inser_images" parameterType="map">
+	 insert into t_mall_product_image(
+	 	shp_id,
+	 	url
+	 	)
+	 	values
+	 <foreach collection="list_image" item="images" separator=",">
+	 	(#{shp_id},#{images})
+	 </foreach>
+	</insert>
+</mapper>
